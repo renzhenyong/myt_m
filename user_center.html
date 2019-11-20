@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/dropload.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/dropload.js"></script>
+    <title>民意通</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none
+        }
+        
+        .header-default {
+            position: relative;
+            background: #a63031;
+            width: 100%;
+            height: 49px;
+            line-height: 49px;
+            padding: 0 10px;
+        }
+        
+        .header-logo img {
+            height: 50px;
+            padding: 5px;
+            display: block;
+            vertical-align: middle;
+            margin: auto;
+        }
+        
+        .slider img {
+            width: 100%
+        }
+        
+        .mytlist {
+            margin-top: 20px;
+            padding: 0 3%;
+        }
+        
+        .mytlist li {
+            float: left;
+            list-style: none;
+            border-top: 1px solid #dedede;
+            padding: 1rem 0;
+        }
+        
+        .mytlist .desc {
+            margin-top: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+        }
+        
+        .status {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-right: 20px;
+            font-size: 13px;
+            color: #ccc;
+        }
+        
+        .content {
+            padding-bottom: 40px;
+            background-color: #fff;
+        }
+        
+        .mokuai {
+            background: #fff;
+            display: flex;
+            height: 100px;
+            padding: 20px 3%;
+        }
+        
+        .question {
+            font-size: 20px;
+            display: flex;
+        }
+        
+        .question>img {
+            margin-right: 20px;
+        }
+        
+        .wdxx {
+            display: flex;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .qscount {
+            margin-left: auto;
+            color: #C8C8CD;
+            margin-right: 10px
+        }
+        
+        .tiwen {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-default">
+        <div class="header-logo">
+            <img src="images/logo.png">
+        </div>
+    </header>
+
+    <div style="background:#F5F6FA;">
+        <!-- 用户名手机号 -->
+        <div class="mokuai">
+            <div class="wdxx">
+                <img src="images/my.png" style="width:50px;height:50px; border-radius:50%;">
+            </div>
+            <div style="margin-left:20px;margin-top:10px">
+                <p style="font-weight:700">用户名:</p>
+                <p style="color:#C7C7C7">手机号:</p>
+            </div>
+        </div>
+        <!-- 我的提问 -->
+
+        <div class="weui-cells">
+            <a class="weui-cell weui-cell_access" href="my_ask.html">
+                <div class="weui-cell__bd">
+                    <p class="question"><img src="images/u133.png"><span> 我的提问</span><span class="qscount">36</span></p>
+                </div>
+                <div class="weui-cell__ft">
+                </div>
+            </a>
+            <!--
+                    <a class="weui-cell weui-cell_access" href="javascript:;">
+                      <div class="weui-cell__bd">
+                            <p class="question"><img src="tpl/guestbook/mobile/images/u134.png"><span> 未读消息</span></p>
+                      </div>
+                      <div class="weui-cell__ft">
+                      </div>
+                    </a>-->
+        </div>
+
+    </div>
+    <!-- 底部导航 -->
+    <div class="weui-tabbar" style="position:fixed;">
+        <a href="index.html" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="images/icon-home.png">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="add_message.html" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="images/tousu.png" style="display:none">
+            </div>
+            <p class="weui-tabbar__label">提问</p>
+        </a>
+
+        <a href="user_center.html" class="weui-tabbar__item  weui-bar__item_on">
+            <div class="weui-tabbar__icon">
+                <img src="images/my.png">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+
+        <div style="position:absolute;left:42%;bottom:20px">
+            <a href="/index.php?c=guestbook&amp;a=add_message&amp;gid=1">
+                <div class="tiwen"><img src="tpl/guestbook/mobile/images/u39.png" style="width:50px;height:50px"></div>
+            </a>
+        </div>
+        <a href="/index.php?c=guestbook&amp;a=add_message&amp;gid=1">
+        </a>
+    </div>
+    <a href="/index.php?c=guestbook&amp;a=add_message&amp;gid=1">
+
+
+
+    </a>
+</body>
+
+</html>

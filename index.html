@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/dropload.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/dropload.js"></script>
+    <title>民意通</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none
+        }
+        
+        .header-default {
+            position: relative;
+            background: #a63031;
+            width: 100%;
+            height: 49px;
+            line-height: 49px;
+            padding: 0 10px;
+        }
+        
+        .header-logo img {
+            height: 50px;
+            padding: 5px;
+            display: block;
+            vertical-align: middle;
+            margin: auto;
+        }
+        
+        .slider {
+            background: #F5F6FA;
+        }
+        
+        .slider img {
+            width: 100%
+        }
+        
+        .mytlist {
+            margin-top: 20px;
+            padding: 0 3%;
+        }
+        
+        .mytlist li {
+            float: left;
+            list-style: none;
+            border-top: 1px solid #dedede;
+            padding: 1rem 0;
+        }
+        
+        .mytlist .desc {
+            margin-top: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            line-height: 1.3em;
+        }
+        
+        .status {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-right: 20px;
+            font-size: 13px;
+        }
+        
+        .content {
+            padding-bottom: 40px;
+            background-color: #fff;
+        }
+        
+        .tiwen {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff
+        }
+    </style>
+</head>
+
+
+<body>
+    <header class="header-default">
+        <div class="header-logo">
+            <img src="images/logo.png">
+        </div>
+    </header>
+    <div class="slider"> <img src="images/u23.png"></div>
+    <!-- 搜索框 -->
+    <div style="background:#F5F6FA;border:1px solid #F5F6FA;">
+        <form action="" method="get" style="background: #fff;border-radius: 4px;margin: -5px 3% 10px 3%;height: 40px;" id="form_id">
+            <div style="display:flex;margin:10px 25px;height:40px">
+
+                <input type="text" style="width:80%;border: 1px solid #fff;border-right: 1px solid #ccc;" name="title" placeholder="请输入要搜索的标题" value="">
+                <p style="color: #AA0022; font-size: 1.3rem;margin: auto; padding-left: 0.7rem;" onclick="javascript:document.getElementById('form_id').submit()">搜索</p>
+
+            </div>
+        </form>
+        <div class="content" style="padding-bottom:15%;margin: 0 3%;border-radius: 4px;">
+            <div class="list-policy lists" id="list">
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=37">
+                    <div class="weui-cell__bd">
+                        <p>小学转学问题咨询</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-07-08 09:04</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=36">
+                    <div class="weui-cell__bd">
+                        <p>学区房问题</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-07-08 08:47</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=35">
+                    <div class="weui-cell__bd">
+                        <p>小学入学材料准备</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-07-08 08:45</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=34">
+                    <div class="weui-cell__bd">
+                        <p>中考报名咨询</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-07-08 08:43</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=23">
+                    <div class="weui-cell__bd">
+                        <p>嵛景华城交房3个月，仍未通自来水！！</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:19</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=22">
+                    <div class="weui-cell__bd">
+                        <p>开发区海滨路招商西岸小区到天马栈桥路段，晚上路灯太暗</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=21">
+                    <div class="weui-cell__bd">
+                        <p>奇章村东北块拆迁户什么时候分房</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=20">
+                    <div class="weui-cell__bd">
+                        <p>占用公共操作乱搭乱建</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=19">
+                    <div class="weui-cell__bd">
+                        <p>月光兰庭开发商不公示规划就卖车位数</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=18">
+                    <div class="weui-cell__bd">
+                        <p>独生子女补贴</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=17">
+                    <div class="weui-cell__bd">
+                        <p>独生子女补贴</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=16">
+                    <div class="weui-cell__bd">
+                        <p>2019年综合类事业编招聘</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=15">
+                    <div class="weui-cell__bd">
+                        <p> 已婚无房户产权问题</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=14">
+                    <div class="weui-cell__bd">
+                        <p>开发区万科城小区乱收物业费</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=13">
+                    <div class="weui-cell__bd">
+                        <p>国四</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=12">
+                    <div class="weui-cell__bd">
+                        <p>小区电动车自行车充电</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=11">
+                    <div class="weui-cell__bd">
+                        <p>蔚蓝海岸小区问题</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=10">
+                    <div class="weui-cell__bd">
+                        <p>独生子女补贴</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=9">
+                    <div class="weui-cell__bd">
+                        <p>学校与加油站位置</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=8">
+                    <div class="weui-cell__bd">
+                        <p>小区电动车自行车充电</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=7">
+                    <div class="weui-cell__bd">
+                        <p>父母未领取过独生子女补贴金</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=6">
+                    <div class="weui-cell__bd">
+                        <p>独生子女补贴</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=5">
+                    <div class="weui-cell__bd">
+                        <p>测试</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=4">
+                    <div class="weui-cell__bd">
+                        <p>测试</p>
+                        <div class="status"><span style="color:#5E5E5E">2019-04-03 12:05</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=3">
+                    <div class="weui-cell__bd">
+                        <p>测试</p>
+                        <div class="status"><span style="color:#5E5E5E">2015-11-14 00:56</span><span style="color:#5E5E5E">未处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=2">
+                    <div class="weui-cell__bd">
+                        <p>测试</p>
+                        <div class="status"><span style="color:#5E5E5E">2015-11-14 00:52</span><span style="color:#89AD34">已处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&amp;a=message_info&amp;id=1">
+                    <div class="weui-cell__bd">
+                        <p>古现办事处拆迁</p>
+                        <div class="status"><span style="color:#5E5E5E">2015-11-14 00:52</span><span style="color:#5E5E5E">未处理</span></div>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </a>
+            </div>
+            <div class="dropload-down">
+                <div class="dropload-noData">暂无更多数据</div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="weui-tabbar" style="position:fixed;">
+        <a href="/index.php?c=guestbook&amp;a=index&amp;client=mobile" class="weui-tabbar__item weui-bar__item_on">
+            <div class="weui-tabbar__icon">
+                <img src="images/icon-home.png">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="add_message.html" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="images/u39.png">
+            </div>
+            <p class="weui-tabbar__label">提问</p>
+        </a>
+
+        <a href="user_center.html" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="images/my.png">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+
+
+    </div>
+    <a href="/index.php?c=guestbook&amp;a=add_message&amp;gid=1">
+
+
+        <script>
+            $(function() {
+
+                // 页数
+                var page = 0;
+                // 每页展示5个
+                var size = 10;
+
+                var title = ''
+                    // dropload
+                $('.content').dropload({
+                    scrollArea: window,
+                    loadDownFn: function(me) {
+                        page++;
+                        // 拼接HTML
+                        var result = '';
+                        $.ajax({
+                            type: 'GET',
+                            url: 'index.php?c=guestbook&a=ajax_get_list&page=' + page + '&title=' + title,
+                            dataType: 'json',
+                            success: function(data) {
+                                var arrLen = data.info.length;
+                                if (arrLen > 0) {
+                                    for (var i = 0; i < arrLen; i++) {
+                                        if (data.info[i].reply_status == "已处理") {
+                                            result += '<a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&a=message_info&id=' + data.info[i].id + '"><div class="weui-cell__bd"><p>' + data.info[i].title + '</p><div class="status"><span style="color:#5E5E5E">' + data.info[i].time + '</span><span style="color:#89AD34">' + data.info[i].reply_status + '</span></div></div> <div class="weui-cell__ft"></div></a>';
+                                        } else {
+                                            result += '<a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&a=message_info&id=' + data.info[i].id + '"><div class="weui-cell__bd"><p>' + data.info[i].title + '</p><div class="status"><span style="color:#5E5E5E">' + data.info[i].time + '</span><span style="color:#5E5E5E">' + data.info[i].reply_status + '</span></div></div> <div class="weui-cell__ft"></div></a>';
+                                        }
+                                    }
+                                    // 如果没有数据
+                                } else {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                }
+                                // 为了测试，延迟1秒加载
+                                setTimeout(function() {
+                                    // 插入数据到页面，放到最后面
+                                    $('.lists').append(result);
+                                    // 每次数据插入，必须重置
+                                    me.resetload();
+                                }, 0);
+                            },
+                            error: function(xhr, type) {
+                                alert('Ajax error!');
+                                // 即使加载出错，也得重置
+                                me.resetload();
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+    </a>
+</body>
+
+<script>
+    $(function() {
+
+        // 页数
+        var page = 0;
+        // 每页展示5个
+        var size = 10;
+
+        var title = '<{$title}>'
+            // dropload
+        $('.content').dropload({
+            scrollArea: window,
+            loadDownFn: function(me) {
+                page++;
+                // 拼接HTML
+                var result = '';
+                $.ajax({
+                    type: 'GET',
+                    url: 'index.php?c=guestbook&a=ajax_get_list&page=' + page + '&title=' + title,
+                    dataType: 'json',
+                    success: function(data) {
+                        var arrLen = data.info.length;
+                        if (arrLen > 0) {
+                            for (var i = 0; i < arrLen; i++) {
+                                if (data.info[i].reply_status == "已处理") {
+                                    result += '<a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&a=message_info&id=' + data.info[i].id + '"><div class="weui-cell__bd"><p>' + data.info[i].title + '</p><div class="status"><span style="color:#5E5E5E">' + data.info[i].time + '</span><span style="color:#89AD34">' + data.info[i].reply_status + '</span></div></div> <div class="weui-cell__ft"></div></a>';
+                                } else {
+                                    result += '<a class="weui-cell weui-cell_access" href="./index.php?c=guestbook&a=message_info&id=' + data.info[i].id + '"><div class="weui-cell__bd"><p>' + data.info[i].title + '</p><div class="status"><span style="color:#5E5E5E">' + data.info[i].time + '</span><span style="color:#5E5E5E">' + data.info[i].reply_status + '</span></div></div> <div class="weui-cell__ft"></div></a>';
+                                }
+                            }
+                            // 如果没有数据
+                        } else {
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function() {
+                            // 插入数据到页面，放到最后面
+                            $('.lists').append(result);
+                            // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 0);
+                    },
+                    error: function(xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+</html>

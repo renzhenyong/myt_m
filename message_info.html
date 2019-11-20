@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+<link rel="stylesheet" href="<{$template}>/css/weui.css">
+<link rel="stylesheet" href="<{$template}>/css/dropload.css">
+<script src="<{$template}>/js/zepto.min.js"></script>
+<script src="<{$template}>/js/dropload.js"></script>
+    <title>民意通</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+a{text-decoration: none}
+        .header-default {
+            position: relative;
+            background: #a63031;
+            width: 100%;
+            height: 49px;
+            line-height: 49px;
+            padding: 0 10px;
+
+        }
+        .header-logo img {
+            height: 50px;
+            padding: 5px;
+            display: block;
+            vertical-align: middle;
+            margin: auto;
+        }
+        .slider img{width:100%}
+        .mytlist{
+          margin-top:20px;
+          padding:0 3%;
+        }
+        .mytlist li{
+            float:left;list-style:none;
+          border-top: 1px solid #dedede;
+          padding:1rem 0;
+        }
+        .mytlist .desc{
+            margin-top:10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+        }
+        .bitian{
+            color:red
+        }
+        .weui-cells {
+    margin-top: 0!important;
+    }
+    #title{
+        color: #a8a8a8;
+    }
+	.tiwen{
+width:65px;height:65px;border-radius: 50%;border:1px solid #ccc;display: flex;justify-content: center;align-items: center;background: #ffffff
+}
+    </style>
+</head>
+
+<body>
+    <header class="header-default">
+        <div class="header-logo">
+            <img src="tpl/guestbook/mobile/images/logo.png">
+        </div>
+    </header>
+
+    <div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label" id="title">标题</label></div>
+        <div class="weui-cell__bd">
+            <{$message.title}>
+        </div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label" id="title">所属分类</label></div>
+        <div class="weui-cell__bd">
+            <{if $message.type==1}>
+            	投诉举报
+            <{elseif $message.type==2}>
+            	咨询建议
+            <{elseif $message.type==3}>
+            	效能建设
+            <{elseif $message.type==4}>
+              	其他事项
+            <{/if}>
+        </div>
+      </div>
+
+      <div style="display:flex">
+      <div class="weui-cells__title" id="title" style="width:80px">内容</div>
+      <div class="weui-cells weui-cells_form">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+            <{$message.message}>
+            <div class="weui-textarea-counter"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label" id="title">处理状态</label></div>
+        <div class="weui-cell__bd" id="stauts" >
+            <{if $message.reply==''}>处理中<{else}><span style="color:#89AD34">已回复</span><{/if}>
+        </div>
+      </div>
+
+<!-- 答复内容 -->
+      <div id="dafu">
+      <!--
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label" id="title">答复人</label></div>
+        <div class="weui-cell__bd" id="stauts">
+            校务处
+        </div>
+      </div>-->
+
+      <div style="display:flex">
+        <div class="weui-cells__title" id="title" style="width:150px">答复内容</div>
+        <div class="weui-cells weui-cells_form">
+          <div class="weui-cell">
+            <div class="weui-cell__bd">
+              <{$message.reply}>
+              <div class="weui-textarea-counter"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+</div>
+
+<div class="weui-tabbar" style="position:fixed;">
+    <a href="<{spUrl client=mobile}>" class="weui-tabbar__item" >
+      <div class="weui-tabbar__icon">
+        <img src="tpl/guestbook/mobile/images/icon-home.png">
+      </div>
+      <p class="weui-tabbar__label" >首页</p>
+    </a>
+    <a href="<{spUrl c=guestbook a=add_message gid=$g.id}>" class="weui-tabbar__item">
+      <div class="weui-tabbar__icon">
+        <img src="tpl/guestbook/mobile/images/tousu.png" style="display:none">
+      </div>
+      <p class="weui-tabbar__label">提问</p>
+    </a>
+
+    <a href="<{spUrl c=guestbook a=user_center gid=$g.id}>" class="weui-tabbar__item  weui-bar__item_on">
+      <div class="weui-tabbar__icon">
+        <img src="tpl/guestbook/mobile/images/my.png">
+      </div>
+      <p class="weui-tabbar__label">我的</p>
+    </a>
+
+    <div style="position:absolute;left:42%;bottom:20px"><a href="<{spUrl c=guestbook a=add_message gid=$g.id}>"><div class="tiwen"><img src="tpl/guestbook/mobile/images/u39.png" style="width:50px;height:50px"></div></div>
+  </div>
+</body>
+<script>
+  var staut = location.pathname.split("/").pop();
+if(id==1){
+$("#stauts").text("处理中");
+$("#dafu").hide();
+
+}else{
+	$("#stauts").text("处理完毕");	
+    $("#dafu").show();
+}
+
+</script>
+</html>
